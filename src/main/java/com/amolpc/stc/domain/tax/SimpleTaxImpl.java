@@ -24,8 +24,10 @@ public class SimpleTaxImpl implements Tax {
 			
 			// round up to nearest 0.05
 			double roundedTax = Math.ceil(tax.doubleValue() * 20.0) / 20.0;
-			
-			return BigDecimal.valueOf(roundedTax);
+			BigDecimal roundedTaxBigDecimal = BigDecimal.valueOf(roundedTax);
+            System.out.println("amount = " + amount + " tax multiplier = " + multiplier + " tax = " + tax
+                    + " roundedTax = " + roundedTax + " roundedTaxBigDecimal = " + roundedTaxBigDecimal);
+            return roundedTaxBigDecimal;
 		}
 		return null;
 	}
